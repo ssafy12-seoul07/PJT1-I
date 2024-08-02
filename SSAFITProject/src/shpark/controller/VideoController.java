@@ -8,19 +8,15 @@ import shpark.view.VideoView;
 import java.util.List;
 import java.util.Scanner;
 
+
 public class VideoController {
     private List<Video> videoList;
     private VideoView videoView;
     private JSONParser jsonParser;
     private Scanner scanner;
-    private static VideoController instance = new VideoController();
-    
-    public static VideoController getInstance() {
-    	return instance;
-    }
 
-    private VideoController() {
-        jsonParser = new JSONParser("src/resources/video.json");
+    public VideoController() {
+    	jsonParser = JSONParser.getInstance("src/resources/video.json");
         videoList = jsonParser.parseVideos();
         videoView = new VideoView();
         scanner = new Scanner(System.in);
