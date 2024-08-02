@@ -21,6 +21,7 @@ public class VideoView {
     public void displayReviews(List<Review> reviews) {
         System.out.println("Reviews:");
         for (Review review : reviews) {
+        	System.out.println("videoTitle: " + review.getVideotitle());
             System.out.println("Reviewer: " + review.getReviewer());
             System.out.println("Comment: " + review.getComment());
             System.out.println("Rating: " + review.getRating());

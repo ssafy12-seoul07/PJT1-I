@@ -1,10 +1,12 @@
 [
     {
+		"videoTitle": "Yoga Basics",
         "reviewer": "John Doe",
         "comment": "Great video!",
         "rating": 5
     },
     {
+		"videoTitle": "Advanced Pilates",
         "reviewer": "Jane Smith",
         "comment": "Very informative.",
         "rating": 4
