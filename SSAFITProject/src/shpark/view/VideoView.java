@@ -1,9 +1,9 @@
-package view;
-
-import model.Video;
-import model.Review;
+package shpark.view;
 
 import java.util.List;
+
+import shpark.model.Review;
+import shpark.model.Video;
 
 public class VideoView {
     public void displayVideos(List<Video> videoList) {

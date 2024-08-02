@@ -1,8 +1,8 @@
-package controller;
+package shpark.controller;
 
-import model.User;
-import util.FileHandler;
-import view.UserView;
+import shpark.coffee.FileHandler;
+import shpark.model.User;
+import shpark.view.UserView;
 
 import java.util.List;
 import java.util.Scanner;

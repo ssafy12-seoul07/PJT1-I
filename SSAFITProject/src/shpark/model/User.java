@@ -1,4 +1,4 @@
-package model;
+package shpark.model;
 
 public class User {
     private String id;

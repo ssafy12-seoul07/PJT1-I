@@ -1,11 +1,11 @@
-package util;
-
-import model.User;
+package shpark.coffee;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import shpark.model.User;
 
 public class FileHandler {
     private String filePath;

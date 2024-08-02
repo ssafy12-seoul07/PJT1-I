@@ -1,4 +1,4 @@
-package model;
+package shpark.model;
 
 public class Review {
     private String reviewer;

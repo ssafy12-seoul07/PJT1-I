@@ -1,8 +1,8 @@
-package view;
-
-import model.User;
+package shpark.view;
 
 import java.util.List;
+
+import shpark.model.User;
 
 public class UserView {
     public void displayUserForm() {
