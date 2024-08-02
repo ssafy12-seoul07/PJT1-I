@@ -1,0 +1,12 @@
+[
+    {
+        "reviewer": "John Doe",
+        "comment": "Great video!",
+        "rating": 5
+    },
+    {
+        "reviewer": "Jane Smith",
+        "comment": "Very informative.",
+        "rating": 4
+    }
+]
