@@ -14,8 +14,13 @@ public class VideoController {
     private VideoView videoView;
     private JSONParser jsonParser;
     private Scanner scanner;
+    private static VideoController instance = new VideoController();
+    
+    public static VideoController getInstance() {
+    	return instance;
+    }
 
-    public VideoController() {
+    private VideoController() {
     	jsonParser = JSONParser.getInstance("src/resources/video.json");
         videoList = jsonParser.parseVideos();
         videoView = new VideoView();

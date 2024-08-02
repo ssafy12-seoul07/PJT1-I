@@ -5,7 +5,7 @@ import shpark.controller.VideoController;
 
 public class Main {
     public static void main(String[] args) {
-        VideoController videoController = new VideoController();
+        VideoController videoController = VideoController.getInstance();
         UserController userController = UserController.getInstance();
         Scanner scanner = new Scanner(System.in);
 
