@@ -15,7 +15,7 @@ public class VideoController {
     private Scanner scanner;
 
     public VideoController() {
-        jsonParser = new JSONParser("src/resources/video.json");
+    	jsonParser = JSONParser.getInstance("src/resources/video.json");
         videoList = jsonParser.parseVideos();
         videoView = new VideoView();
         scanner = new Scanner(System.in);

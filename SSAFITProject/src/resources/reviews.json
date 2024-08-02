@@ -1,0 +1,17 @@
+[
+    {
+        "reviewer": "John Doe",
+        "comment": "Great video! Very informative.",
+        "rating": 5
+    },
+    {
+        "reviewer": "Jane Smith",
+        "comment": "Good content but could use more details.",
+        "rating": 4
+    },
+    {
+        "reviewer": "Emily Johnson",
+        "comment": "Not what I expected. Needs improvement.",
+        "rating": 2
+    }
+]
