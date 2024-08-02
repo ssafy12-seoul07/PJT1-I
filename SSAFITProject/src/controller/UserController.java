@@ -1,4 +1,4 @@
-package main.java.controller;
+package controller;
 
 import model.User;
 import util.FileHandler;
@@ -15,7 +15,7 @@ public class UserController {
     private User loggedInUser;
 
     public UserController() {
-        fileHandler = new FileHandler("src/main/resources/users.json");
+        fileHandler = new FileHandler("src/resources/users.json");
         userList = fileHandler.loadUsers();
         userView = new UserView();
         scanner = new Scanner(System.in);

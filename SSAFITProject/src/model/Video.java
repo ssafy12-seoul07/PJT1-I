@@ -1,4 +1,4 @@
-package main.java.model;
+package model;
 
 public class Video {
     private int no;
@@ -33,3 +33,4 @@ public class Video {
         return String.format("No: %d, Title: %s, Part: %s, URL: %s", no, title, part, url);
     }
 }
+

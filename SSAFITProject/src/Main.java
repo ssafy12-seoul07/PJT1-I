@@ -1,7 +1,6 @@
-package test.java;
+import controller.VideoController;
+import controller.UserController;
 
-import main.java.controller.VideoController;
-import main.java.controller.UserController;
 import java.util.Scanner;
 
 public class Main {
@@ -53,4 +52,3 @@ public class Main {
         }
     }
 }
-

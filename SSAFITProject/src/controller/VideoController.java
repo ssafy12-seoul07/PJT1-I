@@ -1,4 +1,4 @@
-package main.java.controller;
+package controller;
 
 import model.Video;
 import model.Review;
@@ -15,7 +15,7 @@ public class VideoController {
     private Scanner scanner;
 
     public VideoController() {
-        jsonParser = new JSONParser("src/main/resources/video.json");
+        jsonParser = new JSONParser("src/resources/video.json");
         videoList = jsonParser.parseVideos();
         videoView = new VideoView();
         scanner = new Scanner(System.in);
@@ -60,7 +60,7 @@ public class VideoController {
 
                 Review review = new Review(reviewer, comment, rating);
                 reviews.add(review);
-                jsonParser.writeToJSON("src/main/resources/reviews.json", reviews);
+                jsonParser.writeToJSON("src/resources/reviews.json", reviews);
                 System.out.println("Review added successfully.");
                 break;
             default:
@@ -68,3 +68,4 @@ public class VideoController {
         }
     }
 }
+
