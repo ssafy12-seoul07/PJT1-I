@@ -1,6 +1,6 @@
 package main.java.util;
 
-import model.User;
+import main.java.model.User;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.type.TypeReference;

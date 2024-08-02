@@ -1,7 +1,7 @@
 package main.java.util;
 
-import model.Video;
-import model.Review;
+import main.java.model.Video;
+import main.java.model.Review;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.type.TypeReference;

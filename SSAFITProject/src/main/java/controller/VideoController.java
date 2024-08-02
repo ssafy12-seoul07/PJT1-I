@@ -1,9 +1,9 @@
 package main.java.controller;
 
-import model.Video;
-import model.Review;
-import util.JSONParser;
-import view.VideoView;
+import main.java.model.Video;
+import main.java.model.Review;
+import main.java.util.JSONParser;
+import main.java.view.VideoView;
 
 import java.util.List;
 import java.util.Scanner;
