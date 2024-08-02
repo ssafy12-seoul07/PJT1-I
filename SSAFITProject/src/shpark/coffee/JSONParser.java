@@ -74,11 +74,12 @@ public class JSONParser {
                 String[] jsonObjects = jsonString.split("(?<=\\}),\\s*(?=\\{)"); // Split at '},{' keeping the braces
                 for (String jsonObject : jsonObjects) {
                     try {
+                    	String videoTitle = extractStringValue(jsonObject, "videoTitle");
                         String reviewer = extractStringValue(jsonObject, "reviewer");
                         String comment = extractStringValue(jsonObject, "comment");
                         int rating = extractIntValue(jsonObject, "rating");
 
-                        Review review = new Review(reviewer, comment, rating);
+                        Review review = new Review(videoTitle, reviewer, comment, rating);
                         reviews.add(review);
                     } catch (Exception e) {
                         System.err.println("Error parsing JSON object: " + jsonObject);
@@ -99,7 +100,7 @@ public class JSONParser {
             file.write("[");
             for (int i = 0; i < reviews.size(); i++) {
                 Review review = reviews.get(i);
-                file.write(String.format("{\"reviewer\":\"%s\",\"comment\":\"%s\",\"rating\":%d}", review.getReviewer(), review.getComment(), review.getRating()));
+                file.write(String.format("{\"movieTitle\":\"%S\",\"reviewer\":\"%s\",\"comment\":\"%s\",\"rating\":%d}", review.getReviewer(), review.getComment(), review.getRating()));
                 if (i < reviews.size() - 1) {
                     file.write(",");
                 }

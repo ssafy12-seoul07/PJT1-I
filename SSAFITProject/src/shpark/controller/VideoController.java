@@ -56,6 +56,8 @@ public class VideoController {
                 videoView.displayReviews(reviews);
                 break;
             case 2:
+            	System.out.println("Enter video title: ");
+            	String videoTitle = scanner.nextLine();
                 System.out.print("Enter reviewer name: ");
                 String reviewer = scanner.nextLine();
                 System.out.print("Enter comment: ");
@@ -64,7 +66,7 @@ public class VideoController {
                 int rating = scanner.nextInt();
                 scanner.nextLine(); // Consume newline
 
-                Review review = new Review(reviewer, comment, rating);
+                Review review = new Review(videoTitle, reviewer, comment, rating);
                 reviews.add(review);
                 jsonParser.writeToJSON("src/resources/reviews.json", reviews);
                 System.out.println("Review added successfully.");
