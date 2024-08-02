@@ -100,7 +100,7 @@ public class JSONParser {
             file.write("[");
             for (int i = 0; i < reviews.size(); i++) {
                 Review review = reviews.get(i);
-                file.write(String.format("{\"movieTitle\":\"%S\",\"reviewer\":\"%s\",\"comment\":\"%s\",\"rating\":%d}", review.getReviewer(), review.getComment(), review.getRating()));
+                file.write(String.format("{\"movieTitle\":\"%s\",\"reviewer\":\"%s\",\"comment\":\"%s\",\"rating\":%d}", review.getVideotitle(), review.getReviewer(), review.getComment(), review.getRating()));
                 if (i < reviews.size() - 1) {
                     file.write(",");
                 }

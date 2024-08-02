@@ -15,7 +15,9 @@ public class VideoView {
 
     public void displayVideoDetails(Video video) {
         System.out.println("Video Details:");
+        System.out.println("---------------------------------------------------------------");
         System.out.println(video.getInfo());
+        System.out.println("---------------------------------------------------------------");
     }
 
     public void displayReviews(List<Review> reviews) {

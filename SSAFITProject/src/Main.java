@@ -10,6 +10,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
+        	System.out.println("------------------------");
             System.out.println("1. List Videos");
             System.out.println("2. Select Video");
             System.out.println("3. Register User");
@@ -17,10 +18,11 @@ public class Main {
             System.out.println("5. Logout");
             System.out.println("6. Display Users");
             System.out.println("7. Exit");
+            System.out.println("------------------------");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
-
+            System.out.println("------------------------");
             switch (choice) {
                 case 1:
                     videoController.listVideos();
@@ -29,6 +31,7 @@ public class Main {
                     System.out.print("Enter video number: ");
                     int no = scanner.nextInt();
                     scanner.nextLine(); // Consume newline
+                    System.out.println("------------------------");
                     videoController.selectVideo(no);
                     break;
                 case 3:
