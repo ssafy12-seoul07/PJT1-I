@@ -13,8 +13,13 @@ public class UserController {
     private FileHandler fileHandler;
     private Scanner scanner;
     private User loggedInUser;
+    private static UserController instance = new UserController();
+    
+    public static UserController getInstance() {
+    	return instance;
+    }
 
-    public UserController() {
+    private UserController() {
         fileHandler = new FileHandler("src/resources/users.json");
         userList = fileHandler.loadUsers();
         userView = new UserView();
