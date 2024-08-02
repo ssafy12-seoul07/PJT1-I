@@ -1,11 +1,11 @@
-package util;
-
-import model.Video;
-import model.Review;
+package shpark.coffee;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import shpark.model.Review;
+import shpark.model.Video;
 
 public class JSONParser {
     private String filePath;

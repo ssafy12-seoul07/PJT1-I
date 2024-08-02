@@ -1,9 +1,9 @@
-package controller;
+package shpark.controller;
 
-import model.Video;
-import model.Review;
-import util.JSONParser;
-import view.VideoView;
+import shpark.coffee.JSONParser;
+import shpark.model.Review;
+import shpark.model.Video;
+import shpark.view.VideoView;
 
 import java.util.List;
 import java.util.Scanner;

@@ -1,7 +1,7 @@
-import controller.VideoController;
-import controller.UserController;
-
 import java.util.Scanner;
+
+import shpark.controller.UserController;
+import shpark.controller.VideoController;
 
 public class Main {
     public static void main(String[] args) {
