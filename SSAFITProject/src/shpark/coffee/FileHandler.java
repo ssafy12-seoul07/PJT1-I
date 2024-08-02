@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import shpark.model.User;
+import shpark.model.Video;
 
 public class FileHandler {
     private String filePath;
@@ -17,18 +18,31 @@ public class FileHandler {
     public List<User> loadUsers() {
         List<User> users = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-            String line;
+        	StringBuilder jsonBuilder = new StringBuilder();
+        	String line;
             while ((line = reader.readLine()) != null) {
-                if (line.trim().startsWith("{") && line.trim().endsWith("}")) {
-                    // Simple JSON parsing (assuming one user per line for simplicity)
-                    String id = extractValue(line, "id");
-                    String name = extractValue(line, "name");
-                    String password = extractValue(line, "password");
-                    String email = extractValue(line, "email");
-
-                    User user = new User(id, name, password, email);
-                    users.add(user);
+            	jsonBuilder.append(line.trim());
+            }
+            String jsonString = jsonBuilder.toString();
+            if (jsonString.startsWith("[") && jsonString.endsWith("]")) {
+                jsonString = jsonString.substring(1, jsonString.length() - 1); // Remove the square brackets
+                String[] jsonObjects = jsonString.split("(?<=\\}),\\s*(?=\\{)"); // Split at '},{' keeping the braces
+                for (String jsonObject : jsonObjects) {
+                    try {
+                    	String id = extractStringValue(jsonObject, "id");
+                        String name = extractStringValue(jsonObject, "name");
+                        String password = extractStringValue(jsonObject, "password");
+                        String email = extractStringValue(jsonObject, "email");
+                        
+                        User user = new User(id, name, password, email);
+                        users.add(user);
+                    } catch (Exception e) {
+                        System.err.println("Error parsing JSON object: " + jsonObject);
+                        e.printStackTrace();
+                    }
                 }
+            } else {
+                System.err.println("The JSON file does not contain a valid JSON array.");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -58,9 +72,21 @@ public class FileHandler {
         }
     }
 
-    private String extractValue(String line, String key) {
-        int startIndex = line.indexOf("\"" + key + "\":") + key.length() + 3;
-        int endIndex = line.indexOf("\"", startIndex);
-        return line.substring(startIndex, endIndex);
+    private String extractStringValue(String json, String key) {
+        String keyPattern = "\"" + key + "\":";
+        int startIndex = json.indexOf(keyPattern) + keyPattern.length();
+        int endIndex;
+        if (json.charAt(startIndex) == '"') {
+            startIndex++;
+            endIndex = json.indexOf("\"", startIndex);
+        } else {
+            endIndex = json.indexOf(",", startIndex);
+            if (endIndex == -1) {
+                endIndex = json.indexOf("}", startIndex);
+            }
+        }
+        return json.substring(startIndex, endIndex).trim();
     }
+    
+    
 }
