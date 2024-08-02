@@ -1,7 +1,7 @@
 package main.java.view;
 
-import model.Video;
-import model.Review;
+import main.java.model.Video;
+import main.java.model.Review;
 
 import java.util.List;
 

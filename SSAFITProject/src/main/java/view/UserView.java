@@ -1,6 +1,6 @@
 package main.java.view;
 
-import model.User;
+import main.java.model.User;
 
 import java.util.List;
 

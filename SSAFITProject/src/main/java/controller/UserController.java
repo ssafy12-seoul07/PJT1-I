@@ -1,8 +1,8 @@
 package main.java.controller;
 
-import model.User;
-import util.FileHandler;
-import view.UserView;
+import main.java.model.User;
+import main.java.util.FileHandler;
+import main.java.view.UserView;
 
 import java.util.List;
 import java.util.Scanner;
